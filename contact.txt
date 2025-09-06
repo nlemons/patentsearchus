@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact | PatentSearchUS</title>
+  <title>Contact | Patent Search US</title>
   <style>
     body {
       font-family: system-ui, sans-serif;
@@ -40,3 +40,4 @@
   <p>Based east of Dallas, serving startups, innovators, and businesses across Texas and beyond.</p>
 </body>
 </html>
+
