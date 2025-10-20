@@ -9,9 +9,282 @@
   <link rel="canonical" href="https://www.patentsearchus.com/blog/from-geocities-to-geo" />
 
   <style>
-    :root {
-      --bg: #fff;
-      --text: #222;
-      --muted: #555;
-      --border: #e5e5e5;
-      --ma
+    :root{
+      --bg:#fff;
+      --text:#222;
+      --muted:#555;
+      --border:#e5e5e5;
+      --maxw:780px;
+      --navh:64px; /* sticky nav height */
+    }
+
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      line-height:1.65;
+    }
+
+    /* Sticky navigation */
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;height:1px;
+      overflow:hidden;
+    }
+    .skip-link:focus{
+      position:fixed;
+      left:12px; top:12px;
+      width:auto;height:auto;
+      padding:8px 10px;
+      background:#000; color:#fff;
+      z-index:10001;
+      border-radius:6px;
+    }
+
+    nav.main-nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--navh);
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      z-index:10000;
+    }
+    nav.main-nav .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      height:100%;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      color:#000;
+      font-weight:700;
+      font-size:1.05rem;
+      letter-spacing:.02em;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .nav-links{
+      margin:0; padding:0; list-style:none;
+      display:flex; gap:22px; align-items:center;
+    }
+    .nav-links a{
+      color:#222; text-decoration:none; font-weight:500;
+    }
+    .nav-links a:hover{ color:#000; }
+
+    /* Layout containers */
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* Prevent content underlap with sticky nav */
+    .offset{
+      height:var(--navh);
+    }
+
+    header.article-hero{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      padding:40px 0 28px;
+    }
+    h1{
+      font-size:2rem;
+      line-height:1.25;
+      margin:0 0 10px 0;
+    }
+    .dek{
+      color:var(--muted);
+      font-size:1.05rem;
+      margin:0;
+    }
+
+    nav.toc{
+      background:#fafafa;
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:12px 16px;
+      margin:20px 0 30px;
+      font-size:.95rem;
+    }
+    nav.toc strong{ display:block; margin-bottom:8px; color:#000; }
+    nav.toc a{ color:#333; text-decoration:none; margin-right:8px; }
+    nav.toc a:hover{ text-decoration:underline; }
+
+    article{
+      padding:30px 0 80px;
+    }
+    h2{
+      font-size:1.35rem;
+      margin:38px 0 8px;
+      color:#000;
+      scroll-margin-top:calc(var(--navh) + 12px); /* anchor offset */
+    }
+    p{ margin:12px 0; color:var(--text); }
+
+    footer.article-footer{
+      border-top:1px solid var(--border);
+      margin-top:48px;
+      padding-top:16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    @media (max-width:700px){
+      h1{ font-size:1.6rem; }
+      .nav-links{ gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Sticky Main Navigation -->
+  <nav class="main-nav" aria-label="Main">
+    <div class="container">
+      <a class="brand" href="https://www.patentsearchus.com/">PatentSearchUS</a>
+      <ul class="nav-links">
+        <li><a href="https://www.patentsearchus.com/">Home</a></li>
+        <li><a href="https://www.patentsearchus.com/patent-search">Patent Search</a></li>
+        <li><a href="https://www.patentsearchus.com/blog">Blog</a></li>
+        <li><a href="https://www.patentsearchus.com/about">About</a></li>
+        <li><a href="https://www.patentsearchus.com/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- spacer to avoid underlap -->
+  <div class="offset" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <header class="article-hero">
+    <div class="container">
+      <h1>From Geocities to GEO: 27 Years of Making and Monetizing the Internet</h1>
+      <p class="dek">A long arc from early machines and message boards to generative SEO, security lessons, family, and a portfolio vision.</p>
+      <nav class="toc" aria-label="Table of contents">
+        <strong>On this page</strong>
+        <a href="#c64">Commodore 64</a> •
+        <a href="#aol">AOL</a> •
+        <a href="#geocities">Geocities</a> •
+        <a href="#band">Band Site</a> •
+        <a href="#lj-freshman">LiveJournal</a> •
+        <a href="#lj-ra">RA Years</a> •
+        <a href="#first-domain">First Domain</a> •
+        <a href="#seo">SEO</a> •
+        <a href="#agency">Agency</a> •
+        <a href="#partner">Partner Agency</a> •
+        <a href="#layoff">Layoff Builds</a> •
+        <a href="#nomad">Nomad Attempts</a> •
+        <a href="#ilid-rise">ILiveInDallas Rise</a> •
+        <a href="#ilid-fall">ILiveInDallas Fall</a> •
+        <a href="#cyber">Cybersecurity</a> •
+        <a href="#place-spirit">Place and Spirit</a> •
+        <a href="#big-site">Big Site</a> •
+        <a href="#remote">Remote Work</a> •
+        <a href="#domains">Domains</a> •
+        <a href="#vision">Vision</a> •
+        <a href="#closing">Closing Thoughts</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Article -->
+  <main id="content" class="container">
+    <article>
+      <h2 id="c64">First Machine: The Commodore 64 (1989–1991)</h2>
+      <p>In 1989, my dad bought my brother and me a Commodore 64. It was the first computer we could call our own. I remember in 1990 or 1991 flipping through a brochure about modems and being amazed that people could connect with others around the world. Even before I was building websites, I had a sense that computers were more than machines. They were portals.</p>
+
+      <h2 id="aol">First Exposure: AOL and the Family Computer (1996)</h2>
+      <p>In 1996, my parents got AOL. Like most teenagers at that time, I spent time in chatrooms and running searches. But I was not yet building. At home, the internet lived on the family computer, which also doubled as my father’s photography studio workstation for Adobe Photoshop. My time online was limited and shared, and part of me longed for something of my own.</p>
+
+      <h2 id="geocities">First Freedom: Discovering Geocities (1998)</h2>
+      <p>That changed in 1998, when I stumbled onto Geocities websites by Yahoo!. That summer, I was 17 and had been given a full scholarship with room and board to attend a university summer school program in a neighboring city. While other high school students were taking the summer off, I split my time between Psychology 101, Phonetics, and long hours in the computer lab.</p>
+      <p>It was the summer before my senior year, and for the first time I was free to explore the internet on my own terms instead of waiting for a turn on the family computer. In the lab, I discovered Geocities, where anyone could build, and the Yahoo! Directory, which opened up endless paths of discovery.</p>
+      <p>The thrill was not just surfing the web. It was realizing I could both find and publish content that lived online. That realization lit a spark in me that never went out.</p>
+
+      <h2 id="band">First Publishing Permanence: The Band Site (1998–1999)</h2>
+      <p>By 1998 or 1999, my brother and I made a simple AOL webpage for our high school alt rock band and uploaded our professionally recorded songs to a site called Garage Band. Years later, a future girlfriend’s mother stumbled across those tracks. Paradoxically, instead of raising questions, it built trust. It was one of my first lessons in the strange permanence of the web: what you put online can echo back into your life years later in ways you never expect.</p>
+
+      <h2 id="lj-freshman">First Social Networking: LiveJournal as a Freshman (1999)</h2>
+      <p>By 1999, I was a freshman in college. My roommate had a LiveJournal. At first I had no idea what it was, but I quickly figured out it was a different way to connect with others. Many of the early features like Community Journals were very much like Twitter, only long form. You could follow other journals and receive their updates in a chronological, aggregated feed. You could also add a mood, which was like a pre-emoji, a shorthand way to express how you were feeling without needing to explain it in words.</p>
+
+      <h2 id="lj-ra">Scaling LiveJournal: RA Years (2002)</h2>
+      <p>By 2002, I was a Resident Assistant in my college dorm, and I managed to convince at least 30 friends to start their own online journals.</p>
+      <p>What began as digital community-building quickly turned into in-person community-building. Conversations that started online spilled into late-night talks in the hall. My Hall Director noticed the impact and gave me an award for fostering connection.</p>
+      <p>It helped that I had lived on that same wing as a resident in the fall before becoming the RA of it in the spring. I already had credibility with the people living there, and LiveJournal gave us a new shared language. For the first time, I felt the power of technology to bridge the gap between digital and human connection.</p>
+
+      <h2 id="first-domain">First Domain: Planting My Flag (2005)</h2>
+      <p>In 2005, at age 24, I bought my first domain. That step felt different. For the first time, I was not just participating in someone else’s platform. I was staking a claim on my own corner of the internet. I even paid a guy $100 to create a 7–8 page static website in just a few hours, based on the images and content I gave him. It was not fancy, but it was mine, and it felt like planting a flag.</p>
+      <p>At the time, I did not think of it as a pivotal moment in web development as much as an experiment in PR. I wanted to see what would happen if I treated a small online presence like a media asset. Not long after, I put out a press release and received interviews from radio stations and podcasts about the business.</p>
+
+      <h2 id="seo">Realizing SEO Was the Long Game (2006)</h2>
+      <p>PR brought spikes of attention, but the spikes faded. That was when I began to understand the long game of SEO, which could create visibility that did not disappear when the spotlight moved on. I wanted something lasting, not fleeting. That hunger drove me deeper.</p>
+
+      <h2 id="agency">Agency Learning in Uptown Dallas (2006–2008)</h2>
+      <p>In March 2006, I joined a boutique digital marketing and web design firm in Uptown Dallas. There I learned SEO, HTML, WordPress, Google Ads, link building, and design principles. I also absorbed lessons in entrepreneurship simply by watching. Many of us at that agency were also building our own personal branding websites. It was a place buzzing with curiosity, where ideas jumped from one desk to another. Around the same time, we all jumped on Twitter and would tweet each other across the office.</p>
+
+      <h2 id="partner">First Business: Partner Agency (2008)</h2>
+      <p>By 2008, a partner and I started our own web design and digital marketing agency. We did not have clear roles, but we had enough drive to sell clients and make it work. I learned the value of turning ideas into invoices, but I also learned that selling time and advice has its limits.</p>
+
+      <h2 id="layoff">Layoff and Coffee Shop Builds (2009)</h2>
+      <p>In September 2009, I was laid off. Instead of crumbling, I sat in a coffee shop and installed WordPress on ten of the domains I had accumulated. That season felt like falling and flying at the same time.</p>
+
+      <h2 id="nomad">Half-Baked Nomad Attempts (2009 and 2014)</h2>
+      <p>Back in 2008, I realized the digital nomad life was possible. I wanted to work remote, to detach, to escape. For twelve years I carried that dream, imagining myself anywhere with Wi-Fi, free from limits.</p>
+      <p>I even tried to live it out in half-baked ways that I saw as progress. In the summer of 2009, I put everything I owned in storage and couchsurfed for months. In 2014, I made a second attempt and ended up sleeping on a friend’s apartment floor for six months. Looking back, those were listless, lost, dark times. I was deluded enough to believe I was preparing myself for liberty and freedom, when in truth I was drifting.</p>
+
+      <h2 id="ilid-rise">The Rise of ILiveInDallas (2009–2016)</h2>
+      <p>Not long after the layoff, I became a co-founder of ILiveInDallas. When I started, the site pulled in 2,000 visitors a month. At its peak, it broke 100,000. For nearly eight years, it was my playground for SEO and my backstage pass to Dallas nightlife.</p>
+
+      <h2 id="ilid-fall">The Fall of ILiveInDallas (2016)</h2>
+      <p>Those years gave me influence and access, but they also gave me illusions. Partnerships broke when I carried the weight. The influencer lifestyle pulled me into indulgence and distraction. When my Instagram with 15,000 followers was hacked, the invitations dried up overnight. That loss felt like the ground shifting beneath me. It reminded me that borrowed platforms can be taken away, and only what you own is safe.</p>
+
+      <h2 id="cyber">Pivot into Cybersecurity (2017)</h2>
+      <p>In 2017, I took a job at a cybersecurity company. Security had been my blind spot, and it was time to face it head on.</p>
+
+      <h2 id="place-spirit">A Shift in Place and Spirit (2018)</h2>
+      <p>In 2018, I moved from Dallas proper to Las Colinas. That move gave me space to think differently. My mind became clearer, less distracted by the noise I had lived in for years.</p>
+      <p>It was also the year I dedicated my life back to the faith I had been brought up in. That grounding gave me a stronger compass for the work I would do next. For the first time in a long while, I felt less pulled by indulgence and more rooted in purpose.</p>
+
+      <h2 id="big-site">Big Site Launch and Hard Lessons (2019)</h2>
+      <p>In 2019, I launched one of my most ambitious projects yet, a 4,000+ page educational site about precious metals. For over a year, I woke at 4 a.m. to coordinate with contractors and longtime collaborators.</p>
+      <p>I learned to hire and fire quickly, to break projects into micro tasks that even people with little or no experience could complete. Instead of relying on expensive developers, I leaned on grateful work-from-home moms and teachers on summer break, who delivered one small piece at a time.</p>
+      <p>The site was on track for 100,000 visitors a month until it was hacked. The traffic never fully recovered, and eventually, the host took it down. That loss was crushing, but it etched a lesson in me forever: growth without protection is fragile.</p>
+
+      <h2 id="remote">Remote Work Becomes Reality (2020)</h2>
+      <p>In March 2020, the remote dream finally became real when I was told I could work from home. I have been able to do so ever since. What began as an escape plan to globetrot turned into an undeserved luxury, where I could be with my family during working hours. God’s plan was better than mine.</p>
+
+      <h2 id="domains">Domains as Assets (2020–2025)</h2>
+      <p>Fast forward to today. I rent 27 domains. Twelve of them have bonafide content, with more than 120 posts already published and systems in place to multiply much more.</p>
+      <p>I no longer see myself as someone else’s consultant or guru. Selling expertise has its place, but it is not the ultimate test. The true test of a digital marketer is whether you can build, own, and operate something real: a startup, a tech business, or a digital property that stands on its own.</p>
+
+      <h2 id="vision">Vision for 100 Domains (The Next Chapter)</h2>
+      <p>This is why I now lean on AI to create logos, code, and write. Instead of sitting on domains, I am publishing and amplifying at scale. Instead of selling services, I am planting hubs. Some will fade, others will thrive, and I will see which ones grow into something lasting.</p>
+      <p>And my goal is clear. I want to own or rent 100 domains, code them from scratch, and host them all lean on GitHub, avoiding massive hosting bills as the portfolio grows. This is the next chapter: not just experimenting, not just consulting, but building a sustainable empire of digital assets.</p>
+
+      <h2 id="closing">Closing Thoughts</h2>
+      <p>From Geocities to Generative SEO, my path has not been a straight line. It has been a cycle of building, breaking, and rebuilding, each time with sharper tools and deeper conviction.</p>
+      <p>I am still that 24-year-old who wrote “I want to be a .com guy.” But now I measure myself not by clients or contracts, but by whether I can create and sustain something that matters.</p>
+      <p>The internet will keep evolving. Platforms will rise and fall. But if the last 27 years have taught me anything, it is this: your legacy is not in borrowed attention. It is in what you build, what you own, and what endures after the noise fades.</p>
+
+      <footer class="article-footer">
+        © <span id="year"></span> PatentSearchUS
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
